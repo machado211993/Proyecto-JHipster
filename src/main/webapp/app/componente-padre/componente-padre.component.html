@@ -1,0 +1,7 @@
+{{ nombre }} {{ title }}
+
+<p>Mensaje enviado al hijo: {{ mensaje }}</p>
+
+<p>Respuesta del hijo: {{ respuestaDelHijo }}</p>
+
+<jhi-componente-hijo>[mensajePadre]="mensaje" (respuestaHijo)="recibirRespuesta($event)"</jhi-componente-hijo>
