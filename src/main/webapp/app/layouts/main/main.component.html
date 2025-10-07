@@ -1,13 +1,63 @@
 <jhi-page-ribbon></jhi-page-ribbon>
 
+<!-- Navbar -->
 <div>
   <router-outlet name="navbar"></router-outlet>
 </div>
 
-<div class="container-fluid">
-  <div class="card jh-card">
-    <router-outlet></router-outlet>
+<!-- Contenido principal -->
+<main class="flex-grow-1">
+  <div class="container my-4">
+    <div class="card jh-card shadow-sm border-0">
+      <router-outlet></router-outlet>
+    </div>
   </div>
+</main>
 
-  <jhi-footer></jhi-footer>
-</div>
+<!-- Footer moderno -->
+<footer class="bg-dark text-white text-center py-4 mt-auto">
+  <div class="container">
+    <h5 class="mb-3">Seguinos en nuestras redes</h5>
+    <div class="d-flex justify-content-center gap-4 mb-3">
+      <a href="https://www.facebook.com" target="_blank" class="text-white fs-4 social-link"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com" target="_blank" class="text-white fs-4 social-link"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.twitter.com" target="_blank" class="text-white fs-4 social-link"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://www.linkedin.com" target="_blank" class="text-white fs-4 social-link"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.youtube.com" target="_blank" class="text-white fs-4 social-link"><i class="fab fa-youtube"></i></a>
+    </div>
+
+    <p class="mb-0 small text-secondary">© {{ currentYear || '2025' }} - Todos los derechos reservados</p>
+  </div>
+</footer>
+
+<!-- Estilos del layout y footer -->
+<style>
+  html,
+  body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    flex-grow: 1;
+  }
+
+  .social-link {
+    transition:
+      transform 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .social-link:hover {
+    transform: scale(1.2);
+    color: #0d6efd !important; /* Azul Bootstrap */
+  }
+
+  footer {
+    width: 100%;
+  }
+</style>
+
+<!-- Cargar Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>

@@ -1,3 +1,38 @@
-<div class="footer">
-  <p jhiTranslate="footer">Pie de página</p>
-</div>
+<!-- Footer moderno -->
+<footer class="bg-dark text-white text-center py-4 mt-auto">
+  <div class="container">
+    <h5 class="mb-3">Seguinos en nuestras redes</h5>
+    <div class="d-flex justify-content-center gap-4 mb-3">
+      <a href="https://www.facebook.com" target="_blank" class="text-white fs-4 social-link"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com" target="_blank" class="text-white fs-4 social-link"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.twitter.com" target="_blank" class="text-white fs-4 social-link"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://www.linkedin.com" target="_blank" class="text-white fs-4 social-link"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.youtube.com" target="_blank" class="text-white fs-4 social-link"><i class="fab fa-youtube"></i></a>
+    </div>
+
+    <p class="mb-0 small text-secondary">© {{ currentYear || '2025' }} - Todos los derechos reservados</p>
+  </div>
+</footer>
+
+<!-- Estilos adicionales -->
+<style>
+  .social-link {
+    transition:
+      transform 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .social-link:hover {
+    transform: scale(1.2);
+    color: #0d6efd !important; /* Azul Bootstrap */
+  }
+
+  footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+</style>
+
+<!-- Asegurate de tener Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>

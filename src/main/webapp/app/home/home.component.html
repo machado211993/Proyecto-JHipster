@@ -1,85 +1,66 @@
-<div class="row">
-  <div class="col-md-3">
-    <span class="hipster img-fluid rounded"></span>
-  </div>
-
-  <div class="col-md-9">
-    <h1 class="display-4"><span jhiTranslate="home.title">¡Bienvenido, Java Hipster!</span> (Mi Proyecto Jhipster)</h1>
-    <h1>soy manuel</h1>
-
-    <jhi-componente-padre></jhi-componente-padre>
-
-    <p class="lead" jhiTranslate="home.subtitle">Esta es su página de inicio</p>
-
-    <div>
-      @if (account() !== null) {
-        <div class="alert alert-success">
-          @if (account(); as accountRef) {
-            <span id="home-logged-message" jhiTranslate="home.logged.message" [translateValues]="{ username: accountRef.login }"
-              >Está conectado como &quot;{{ accountRef.login }}&quot;.</span
-            >
-          }
-        </div>
-      } @else {
-        <div class="alert alert-warning">
-          <span jhiTranslate="global.messages.info.authenticated.prefix">Si desea </span>
-          <a class="alert-link" (click)="login()" jhiTranslate="global.messages.info.authenticated.link">iniciar sesión</a
-          ><span jhiTranslate="global.messages.info.authenticated.suffix"
-            >, puede intentar con las cuentas predeterminadas:<br />- Administrador (usuario=&quot;admin&quot; y
-            contraseña=&quot;admin&quot;) <br />- Usuario (usuario=&quot;user&quot; y contraseña=&quot;user&quot;).</span
-          >
-        </div>
-
-        <div class="alert alert-warning">
-          <span jhiTranslate="global.messages.info.register.noaccount">¿Aún no tienes una cuenta?</span>&nbsp;
-          <a class="alert-link" routerLink="/account/register" jhiTranslate="global.messages.info.register.link">Crea una cuenta</a>
-        </div>
-      }
-    </div>
-
-    <p jhiTranslate="home.question">Si tiene preguntas sobre JHipster:</p>
-
-    <ul>
-      <li>
-        <a href="https://www.jhipster.tech/" target="_blank" rel="noopener noreferrer" jhiTranslate="home.link.homepage"
-          >Página de inicio de JHipster</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://stackoverflow.com/tags/jhipster/info"
-          target="_blank"
-          rel="noopener noreferrer"
-          jhiTranslate="home.link.stackoverflow"
-          >JHipster en Stack Overflow</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/jhipster/generator-jhipster/issues?state=open"
-          target="_blank"
-          rel="noopener noreferrer"
-          jhiTranslate="home.link.bugtracker"
-          >JHipster seguimiento de errores</a
-        >
-      </li>
-      <li>
-        <a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer" jhiTranslate="home.link.chat"
-          >Sala de chat pública de JHipster</a
-        >
-      </li>
-      <li>
-        <a href="https://twitter.com/jhipster" target="_blank" rel="noopener noreferrer" jhiTranslate="home.link.follow"
-          >contacto &#64;jhipster en Twitter</a
-        >
-      </li>
-    </ul>
-
-    <p>
-      <span jhiTranslate="home.like">Si te gusta JHipster, danos una estrella en</span>
-      <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer" jhiTranslate="home.github"
-        >GitHub</a
-      >!
+<div class="home-container container py-5">
+  <!-- Hero principal -->
+  <section class="text-center py-5 fade-in">
+    <h1 class="display-3 fw-bold text-primary mb-3">¡Hola, soy Manuel 👋!</h1>
+    <p class="lead mb-4">
+      Desarrollador <span class="text-success fw-semibold">Full Stack</span> con experiencia en
+      <span class="text-info">Java, Spring Boot, Angular y MySQL</span>.
     </p>
-  </div>
+    <div class="d-flex justify-content-center gap-3">
+      <a routerLink="/projects" class="btn btn-lg btn-primary px-4 shadow">Ver proyectos</a>
+      <a routerLink="/about" class="btn btn-lg btn-outline-secondary px-4">Sobre mí</a>
+    </div>
+  </section>
+
+  <hr class="my-5" />
+
+  <!-- Sección de bienvenida -->
+  <section class="row align-items-center fade-in">
+    <div class="col-md-5 text-center mb-4 mb-md-0">
+      <img src="assets/img/hero-code.svg" alt="Desarrollador" class="img-fluid rounded-3 shadow-sm" />
+    </div>
+    <div class="col-md-7">
+      <h2 class="fw-bold mb-3">Bienvenido a mi proyecto JHipster 🚀</h2>
+    </div>
+  </section>
+
+  <hr class="my-5" />
+
+  <!-- Sección de autenticación -->
+  <section class="fade-in">
+    @if (account() !== null) {
+      <div class="alert alert-success shadow-sm">
+        @if (account(); as accountRef) {
+          <span id="home-logged-message">
+            ✅ Conectado como <strong>{{ accountRef.login }}</strong
+            >.
+          </span>
+        }
+      </div>
+    } @else {
+      <div class="alert alert-warning shadow-sm">
+        <span>¿Ya tenés cuenta?</span>
+        <a class="alert-link" (click)="login()">Iniciá sesión</a>
+        <span> o registrate gratis.</span>
+      </div>
+      <div class="alert alert-warning shadow-sm">
+        <span>Usuarios demo disponibles:</span><br />
+        <code>admin / admin</code> — <code>user / user</code>
+      </div>
+    }
+  </section>
+
+  <hr class="my-5" />
+
+  <!-- Enlaces de interés -->
+  <section class="text-center fade-in">
+    <h4 class="fw-semibold mb-4">Recursos de JHipster</h4>
+    <div class="d-flex flex-wrap justify-content-center gap-3">
+      <a class="btn btn-outline-primary" href="https://www.jhipster.tech/" target="_blank">Página oficial</a>
+      <a class="btn btn-outline-secondary" href="https://stackoverflow.com/tags/jhipster/info" target="_blank">Stack Overflow</a>
+      <a class="btn btn-outline-dark" href="https://github.com/jhipster/generator-jhipster/issues" target="_blank">Reportar bug</a>
+      <a class="btn btn-outline-success" href="https://gitter.im/jhipster/generator-jhipster" target="_blank">Chat público</a>
+      <a class="btn btn-outline-info" href="https://twitter.com/jhipster" target="_blank">Twitter</a>
+    </div>
+  </section>
 </div>
